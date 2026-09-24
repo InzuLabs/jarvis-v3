@@ -112,10 +112,18 @@
 .search-result small { display: block; color: var(--cyan); margin-top: 5px; overflow-wrap: anywhere; }
 .search-result a { display: block; color: var(--cyan); margin-top: 5px; overflow-wrap: anywhere; word-break: break-word; }
 .search-result p { color: var(--muted); margin: 7px 0 0; line-height: 1.5; }
+.voice-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.voice-actions .btn { min-height: 36px; }
+.search-result .read-btn { margin-top: 10px; }
+
+body[data-voice-state="LISTENING"] .state-dot { background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+body[data-voice-state="THINKING"] .state-dot { background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+body[data-voice-state="SPEAKING"] .state-dot { background: var(--green); box-shadow: 0 0 12px var(--green); }
 
 @media (max-width: 700px) {
   .core-wrap { width: min(58vw, 230px); margin: 10px auto 0; }
   .date-selects { grid-template-columns: 1fr; }
+  .voice-actions .btn { flex: 1 1 140px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
