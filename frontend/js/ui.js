@@ -1,0 +1,6 @@
+export const navItems = [['home','⌂','Home'],['chat','◌','Chat'],['tasks','✓','Tasks'],['day','◷','My Day'],['study','⌁','Study'],['search','⌕','Search'],['security','◈','Security'],['system','▦','System'],['settings','⚙','Settings']];
+export function escapeHtml(value) { const div = document.createElement('div'); div.textContent = value; return div.innerHTML; }
+export function greeting(hour = new Date().getHours()) { if (hour < 12) return 'Good morning'; if (hour < 18) return 'Good afternoon'; return 'Good evening'; }
+export function toast(message) { const region = document.querySelector('#toast-region'); const item = document.createElement('div'); item.className = 'toast'; item.textContent = message; region.append(item); setTimeout(() => item.remove(), 3200); }
+export function formatDate(date = new Date()) { return new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }).format(date); }
+export function formatTime(seconds) { const h = Math.floor(seconds / 3600); const m = Math.floor((seconds % 3600) / 60); const s = seconds % 60; return [h, m, s].map((n, i) => i === 0 ? String(n).padStart(2, '0') : String(n).padStart(2, '0')).join(':'); }
