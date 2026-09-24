@@ -102,6 +102,17 @@
   margin-top: 7px;
 }
 
+.search-result {
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+
+.search-result:first-child { border-top: 0; }
+.search-result strong { display: block; color: var(--text); }
+.search-result small { display: block; color: var(--cyan); margin-top: 5px; overflow-wrap: anywhere; }
+.search-result a { display: block; color: var(--cyan); margin-top: 5px; overflow-wrap: anywhere; word-break: break-word; }
+.search-result p { color: var(--muted); margin: 7px 0 0; line-height: 1.5; }
+
 @media (max-width: 700px) {
   .core-wrap { width: min(58vw, 230px); margin: 10px auto 0; }
   .date-selects { grid-template-columns: 1fr; }
